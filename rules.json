@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "modifyHeaders",
+            "responseHeaders": [
+                {
+                    "header": "authorizationproxy",
+                    "operation": "append",
+                    "value": "capture-token"
+                }
+            ]
+        },
+        "condition": {
+            "urlFilter": "*://bancodepreco.tce.mg.gov.br/*",
+            "resourceTypes": ["xmlhttprequest"]
+        }
+    }
+]
