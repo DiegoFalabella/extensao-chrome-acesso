@@ -1,8 +1,16 @@
-// Ajuste o seletor para o elemento que contém o token
-const tokenElement = document.querySelector('#token'); // Substitua por um seletor válido
+// Usage example with token extraction
+const tokenElement = document.querySelector('#token'); // Adjust selector as needed
 if (tokenElement) {
     const token = tokenElement.textContent.trim();
-    chrome.runtime.sendMessage({ token });
+
+    // Make the API call
+    makeSecureApiCall(token)
+        .then(response => {
+            console.log('API response:', response);
+        })
+        .catch(error => {
+            console.error('Failed to make API call:', error);
+        });
 } else {
-    console.error('Token não encontrado na página.');
+    console.error('Token not found on page.');
 }
